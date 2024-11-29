@@ -488,6 +488,7 @@ suite('surround plugin', () => {
   newTest({
     title: "'S(' surrounds visual selection with space",
     start: ['first li|ne test'],
+    // first li|ne test
     keysPressed: 'viwS(',
     end: ['first ( |line ) test'],
   });
@@ -505,6 +506,19 @@ suite('surround plugin', () => {
       stubClass: CommandSurroundAddSurroundingTag,
       methodName: 'readTag',
       returnValue: 'div',
+    },
+  });
+
+  newTest({
+    title: "'S<' surrounds selection with None",
+    start: ['first li|ne test'],
+    keysPressed: 'viwS<0',
+    end: ['|first <line> test'],
+    stub: {
+      stubClass: CommandSurroundAddSurroundingTag,
+      methodName: 'readTag',
+      // If you do not enter a key, it must be wrapped in '<', '>'.
+      returnValue: '',
     },
   });
 
