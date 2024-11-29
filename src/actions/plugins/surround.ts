@@ -353,8 +353,9 @@ export class CommandSurroundAddSurroundingTag extends BaseCommand {
         : await this.readTag();
 
     if (!tagInput) {
-      vimState.surround = undefined;
-      await vimState.setCurrentMode(Mode.Normal);
+      // If tagInput is empty, wrap the tag with '<', '>'
+      vimState.surround.replacement = '>';
+      await SurroundHelper.ExecuteSurround(vimState);
       return;
     }
 
