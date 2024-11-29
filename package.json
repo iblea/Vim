@@ -1,10 +1,10 @@
 {
-  "name": "vim",
-  "displayName": "Vim",
+  "name": "vim-dev",
+  "displayName": "Vim-Dev",
   "description": "Vim emulation for Visual Studio Code",
   "icon": "images/icon.png",
-  "version": "1.28.1",
-  "publisher": "vscodevim",
+  "version": "1.28.2",
+  "publisher": "iblea",
   "galleryBanner": {
     "color": "#e3f4ff",
     "theme": "light"
